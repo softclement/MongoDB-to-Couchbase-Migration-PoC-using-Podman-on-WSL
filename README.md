@@ -31,6 +31,8 @@ Couchbase (Target)
    |  account documents
    |  transaction documents
 ```
+<img width="1105" height="839" alt="image" src="https://github.com/user-attachments/assets/9b849395-2b29-4c5a-9e04-e1b9a2672065" />
+
 
 ## Environment
 
