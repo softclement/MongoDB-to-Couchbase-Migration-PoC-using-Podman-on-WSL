@@ -6,6 +6,7 @@ Exits with code 0 on PASS, code 1 on FAIL.
 
 import sys
 import time
+from datetime import timedelta
 
 from pymongo import MongoClient
 from couchbase.cluster import Cluster
@@ -66,7 +67,7 @@ def main():
     print("\n  Connecting to Couchbase...")
     auth    = PasswordAuthenticator(CB_USER, CB_PASS)
     cluster = Cluster(CB_HOST, ClusterOptions(auth))
-    cluster.wait_until_ready(timeout=15)
+    cluster.wait_until_ready(timeout=timedelta(seconds=15))
 
     cb_counts = {
         "customer":    cb_count(cluster, CB_BUCKET, "customer"),

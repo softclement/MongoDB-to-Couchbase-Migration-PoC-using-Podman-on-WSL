@@ -5,7 +5,7 @@ Tracks start time, end time, and duration per collection and overall.
 """
 
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 from pymongo import MongoClient
 from couchbase.cluster import Cluster
@@ -115,7 +115,7 @@ def main():
     print("\n  Connecting to Couchbase...")
     auth    = PasswordAuthenticator(CB_USER, CB_PASS)
     cluster = Cluster(CB_HOST, ClusterOptions(auth))
-    cluster.wait_until_ready(timeout=15)
+    cluster.wait_until_ready(timeout=timedelta(seconds=15))
     bucket  = cluster.bucket(CB_BUCKET)
     scope   = bucket.default_scope()
     col     = scope.collection("_default")
