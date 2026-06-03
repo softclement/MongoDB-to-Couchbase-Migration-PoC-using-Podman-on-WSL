@@ -108,6 +108,8 @@ cd ~/nosql-poc
 # Step 2 — Create Podman Network
 
 ```bash
+sudo apt install podman
+
 podman network create nosql-net
 ```
 
